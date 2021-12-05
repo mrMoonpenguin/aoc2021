@@ -26,7 +26,7 @@ getCoords :: (Int, Int) -> (Int, Int) -> [(Int, Int)]
 getCoords (x1, y1) (x2, y2)
   | x1 == x2 = zip (replicate (length ys) x1) ys
   | y1 == y2 = zip xs (replicate (length xs) y1)
-  | otherwise = []
+  | otherwise = zip xs ys
   where
     xs = if x1 < x2 then [x1 .. x2] else [x1, x1 - 1 .. x2]
     ys = if y1 < y2 then [y1 .. y2] else [y1, y1 - 1 .. y2]
